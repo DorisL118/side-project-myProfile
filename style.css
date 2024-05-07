@@ -1,0 +1,281 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*--------------- 共用區 ---------------*/
+@font-face {
+  font-family: "noto-sans-tc";
+  src: url(../noto-sans-tc-font/noto-sans-tc.woff);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../popins-font/popins.woff);
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+p {
+  color: var(--text);
+  font-weight: 500;
+}
+
+body, html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "noto-sans-tc", "Poppins";
+  overflow-x: hidden;
+}
+
+section {
+  display: flex;
+  justify-content: center; /* 穩定 section 垂直置中*/
+  width: 100vw;
+  height: 100vh;
+  /* 在桌機板上 */
+  /* 在平板上 */
+  /* 在手機板上 */
+}
+@media (min-width: 1024px) {
+  section {
+    width: calc(100vw - 200px); /* 左右各留 100px */
+    margin: 0 100px;
+  }
+}
+@media (max-width: 1023px) and (min-width: 641px) {
+  section {
+    width: calc(100vw - 100px); /* 左右各留 50px */
+    margin: 0 50px;
+  }
+}
+@media (max-width: 640px) {
+  section {
+    width: calc(100vw - 20px); /* 左右各留 10px */
+    margin: 0 10px;
+  }
+}
+
+:root {
+  /*bg color*/
+  --bg-color-1: #F6F7F2;
+  /*main color*/
+  --primary-color: #FFC88C;
+  --sencondary-color: #546763;
+  --green: #14bd95;
+  --gray: #333333;
+  --text: #6D6A7D;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/*--------------- animation ---------------*/
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+/*--------------- nav ---------------*/
+.container {
+  width: 100vw; /* 使用 vw 單位來表示整個視窗的寬度 */
+  max-width: 100%; /* 最大寬度設置為 100% */
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between; /* 左右置中 */
+  align-items: center;
+  padding: 0 20px; /* 添加左右 padding 以保持內容不貼邊 */
+}
+.container a {
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  color: #FFFFFF;
+  margin: 0 10px;
+}
+.container .row {
+  width: 100vw; /* 佔滿整個視窗寬度 */
+  padding: 0 10px; /* 左右留有一定的間距 */
+}
+
+/*--------------- header ---------------*/
+#header {
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .line {
+  width: 100vw;
+}
+#header .left, #header .right {
+  width: 50vw;
+  overflow: hidden;
+  display: inline-block;
+}
+#header .left {
+  color: pink;
+  transform: skew(0deg, -15deg);
+}
+#header .right {
+  color: black;
+  transform: skew(0deg, 15deg);
+}
+#header .left .content {
+  width: 100vw;
+  text-align: center;
+}
+#header .right .content {
+  width: 100vw;
+  text-align: center;
+  transform: translate(-50vw);
+}
+#header span {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 6vw;
+  text-transform: uppercase;
+  line-height: 0.8;
+  transition: ease-out 0.6s;
+}
+
+/*--------------- me ---------------*/
+#me {
+  flex-direction: column;
+  /* RWD斷點 */
+  /* 電腦 */
+  /* 平板 */
+  /* 手機板 */
+}
+#me .me-photo {
+  display: flex;
+  align-items: center;
+}
+#me .me-photo p {
+  line-height: 1.2;
+  color: var(--green);
+  width: 10vw;
+}
+#me .me-content {
+  padding: 30px 0px 0px 25px;
+}
+#me .me-content h2 {
+  color: var(--primary-color);
+}
+#me .me-content p {
+  font-size: 1rem;
+  width: 80vw;
+  color: var(--text);
+}
+#me .me-photo img {
+  width: 30vh;
+  height: 30vh;
+  margin-right: 60px;
+  margin-bottom: 40px;
+  animation: morph 10s ease-in-out infinite alternate, change 20s linear infinite alternate;
+}
+@keyframes morph {
+  0%, 100% {
+    border-radius: 68% 55% 80% 50%/68% 60% 70% 55%;
+  }
+  20% {
+    border-radius: 37% 63% 51% 49%/37% 65% 35% 63%;
+  }
+  40% {
+    border-radius: 36% 64% 64% 36%/64% 48% 52% 36%;
+  }
+  60% {
+    border-radius: 37% 63% 51% 49%/30% 30% 70% 70%;
+  }
+  80% {
+    border-radius: 40% 60% 42% 58%/41% 51% 49% 59%;
+  }
+}
+@keyframes change {
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@media (min-width: 821px) {
+  #me .me-content p {
+    font-size: 0.8rem;
+    width: 75vh;
+    color: var(--text);
+  }
+}
+@media (max-width: 820px) {
+  #me .me-photo {
+    display: flex;
+    flex-direction: column;
+  }
+  #me .me-photo p {
+    width: 40vh;
+  }
+  #me .me-photo img:nth-child(3) {
+    display: none;
+  }
+  #me .me-photo-1 {
+    display: flex;
+  }
+  #me .me-photo-1 img {
+    margin: 0px 5px 0px 5px;
+  }
+}
+@media (max-width: 640px) {
+  #me #me {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+    height: 100vh; /* 使用整個視窗的高度 */
+  }
+  #me .me-photo img:nth-child(n+2) {
+    display: none;
+  }
+}
+
+/*--------------- skills ---------------*/
+/*--------------- project ---------------*/
+#project {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 50px;
+}
+#project .project-1 img {
+  width: 60vw;
+  pointer-events: none;
+  transform: translateZ(0) rotateX(3deg);
+  padding: 30px;
+  transform-style: preserve-3d;
+}
+#project .project-1 img:after {
+  content: " ";
+  width: 100%;
+  height: 10px;
+  border-radius: 50%;
+  left: 0;
+  bottom: -50px;
+  box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3);
+}/*# sourceMappingURL=style.css.map */
