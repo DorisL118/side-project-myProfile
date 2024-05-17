@@ -255,49 +255,49 @@ h2 {
 }
 
 /*--------------- skills ---------------*/
-.row {
+#skills {
+  /* 平板 */
+  /* 手機版 */
+  /* 小型手機版 */
+}
+#skills .row {
   display: flex;
   flex-wrap: wrap; /* 這是為了在視窗過小時能夠換行 */
   justify-content: space-around; /* 在水平方向上平均分配空間 */
 }
-
-.smoove {
+#skills .smoove {
   flex: 1 1 22%; /* 每個區塊寬度為22%，以確保四個區塊一行 */
   box-sizing: border-box; /* 包含內邊距和邊框 */
   margin: 10px; /* 每個區塊之間的間距 */
 }
-
-.list-box {
+#skills .list-box {
   width: 80%;
   max-width: 1200px;
   display: flex;
 }
-
-/* 平板 */
 @media (max-width: 820px) {
-  #skills .list-box {
+  #skills #skills .list-box {
     flex-direction: column;
     height: 65vh;
   }
-  #skills .item:nth-child(n+3) {
+  #skills #skills .item:nth-child(n+3) {
     display: none;
   }
 }
-/* 手機版 */
 @media (max-width: 640px) {
-  #skills .list-box {
+  #skills #skills .list-box {
     height: 70vh;
   }
-  #skills .item:nth-child(3) {
+  #skills #skills .item:nth-child(3) {
     display: flex;
   }
 }
-/* 小型手機版 */
 @media (max-width: 376px) {
-  #skills .item:nth-child(3) {
+  #skills #skills .item:nth-child(3) {
     display: none;
   }
 }
+
 /*--------------- project ---------------*/
 #project {
   height: 100vh;
