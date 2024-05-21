@@ -91,31 +91,52 @@ h2 {
   }
 }
 /*--------------- nav ---------------*/
-.container {
-  width: 100vw; /* 使用 vw 單位來表示整個視窗的寬度 */
-  max-width: 100%; /* 最大寬度設置為 100% */
-  height: 50px;
+#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: background-color 1s ease;
+  z-index: 1000;
+}
+#nav.nav-transparent {
+  background-color: transparent;
+}
+#nav.nav-transparent a {
+  color: var(--primary-color);
+}
+#nav.nav-colored {
+  background-color: var(--primary-color);
+}
+#nav.nav-colored .container {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#nav.nav-colored a {
+  color: white;
+}
+#nav .container {
+  width: 100vw;
+  max-width: 100%;
+  height: 70px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: var(--primary-color);
   display: flex;
-  justify-content: space-between; /* 左右置中 */
+  justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* 添加左右 padding 以保持內容不貼邊 */
+  padding: 0 45px;
 }
-.container a {
+#nav .container a {
   cursor: pointer;
   font-weight: 600;
   text-decoration: none;
-  color: #FFFFFF;
   margin: 0 10px;
+  font-size: 1.2rem;
 }
-.container .row {
-  width: 100vw; /* 佔滿整個視窗寬度 */
-  padding: 0 10px; /* 左右留有一定的間距 */
+#nav .container .row {
+  width: 100vw;
+  padding: 0 10px;
 }
 
 /*--------------- header ---------------*/
