@@ -27,15 +27,23 @@ body, html {
     width: 100%;
     margin: 0;
     padding: 0;
-
     font-family: "noto-sans-tc", "Poppins";
     overflow-x: hidden;
 }
+
+body {
+    background-image: url('./img/p-bg.svg'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 section:not(#header) {
     display: flex;
     justify-content: center; /* 穩定 section 垂直置中*/
     width: 100vw;
     height: 100vh;
+    background-image: url();
 
     /* 在桌機板上 */
     @media (min-width: 1024px) {
@@ -96,6 +104,84 @@ h2 {
             transform: translateY(0);
         }
     }
+
+
+
+
+
+
+
+/*--------------- 轉廠區塊 ---------------*/
+.parallax-scrolling {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    // opacity: 0.8;
+    
+    .fixed-background-section {
+        width: 100%;
+        height: 100%;
+        background-image: url(./img/bg-3.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .fixed-background-section h1 {
+        margin: 0;
+        font-size: 3em;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+}
+.parallax-scrolling {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    // opacity: 0.8;
+    
+    .fixed-background-section {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-attachment: fixed;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .fixed-background-section h1 {
+        margin: 0;
+        font-size: 3em;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+}
+
 
 
 
@@ -163,40 +249,6 @@ h2 {
 
 
 /*--------------- header ---------------*/
-// .parallax-scrolling {
-//     height: 30vh;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     overflow: hidden;
-//     position: relative;
-//     // opacity: 0.8;
-    
-//     .fixed-background-section {
-//         width: 100%;
-//         height: 100%;
-//         background-size: cover;
-//         background-attachment: fixed;
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         color: white;
-//         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-//     }
-
-//     .fixed-background-section h1 {
-//         margin: 0;
-//         font-size: 3em;
-//         text-align: center;
-//         transform: translate(-50%, -50%);
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//     }
-// }
 #header {
     position: relative;
     z-index: 1;
@@ -376,7 +428,7 @@ h2 {
 /*--------------- skills-1 ---------------*/
 .row {
     section {
-        height: 50vh;
+        height: 50vh !important;
     }
 
     .skill-1 {
