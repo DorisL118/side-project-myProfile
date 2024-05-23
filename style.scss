@@ -367,13 +367,47 @@ h2 {
         }
     }
 }   
-    
 
 
 
 
-/*--------------- skills ---------------*/
+
+
+/*--------------- skills-1 ---------------*/
+.row {
+    section {
+        height: 50vh;
+    }
+
+    .skill-1 {
+        width: 40vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skill-2 {
+        width: 60vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+/*--------------- skills-2 ---------------*/
 #skills {
+    section {
+        justify-content: center;
+
+    }
     .row {
         display: flex;
         flex-wrap: wrap; /* 這是為了在視窗過小時能夠換行 */
