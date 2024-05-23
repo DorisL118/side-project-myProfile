@@ -462,8 +462,8 @@ h2 {
     }
     .row {
         display: flex;
-        flex-wrap: wrap; /* 這是為了在視窗過小時能夠換行 */
-        justify-content: space-around; /* 在水平方向上平均分配空間 */
+        flex-wrap: wrap; 
+        justify-content: space-around; 
     }
     
     .smoove {
@@ -508,9 +508,12 @@ h2 {
 
 
 
+
+
+
+
 /*--------------- project ---------------*/
 #project {
-
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -524,14 +527,47 @@ h2 {
         padding: 30px;
         transform-style: preserve-3d;
         
-        &:after{
-            content:" ";
+        &:after {
+            content: " ";
             width: 100%;
             height: 10px;
             border-radius: 50%;
-            left:0;
-            bottom:-50px;
+            left: 0;
+            bottom: -50px;
             box-shadow: 0 30px 20px rgba(0,0,0,.3);
-            }
+        }
     }
+}
+
+
+
+
+
+
+
+
+
+/*--------------- contact ---------------*/
+#contact {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
 }

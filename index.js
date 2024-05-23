@@ -51,10 +51,19 @@ $(document).ready(function() {
 
     // 鼠標移動效果
     var card = $(".project-1");
+    var maxRotationX = 20; // X軸最大旋轉角度
+    var maxRotationY = 20; // Y軸最大旋轉角度
 
     $(document).on("mousemove", function(e) {
         var ax = -($(window).innerWidth() / 2 - e.pageX) / 20;
-        var ay = ($(window).innerHeight() / 2 - e.pageY) / 10;
+        var ay = ($(window).innerHeight() / 2 - e.pageY) / 20;
+
+        // 限制最大旋轉角度
+        ax = Math.min(Math.max(ax, -maxRotationX), maxRotationX);
+        ay = Math.min(Math.max(ay, -maxRotationY), maxRotationY);
+
         card.attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
     });
+
+
 });
