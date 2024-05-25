@@ -493,4 +493,8 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.footer p {
+  white-space: nowrap;
+  letter-spacing: 0;
 }/*# sourceMappingURL=style.css.map */
