@@ -457,20 +457,40 @@ h2 {
 /*--------------- contact ---------------*/
 #contact {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-}
-#contact a {
-  text-decoration: none;
-  color: inherit;
+  gap: 20px;
 }
 #contact .contact-item {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  align-items: center;
+}
+#contact .contact-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+#contact .contact-item a img {
+  margin-right: 15px;
+}
+#contact .contact-item a p {
+  margin: 0;
+}
+#contact .contact-item img {
+  margin-right: 5px;
 }
 #contact .contact-item p {
   margin: 0;
-  padding: 0;
+}
+#contact .line {
+  display: flex;
+  align-items: center;
+  color: #acacac;
+}
+
+/*--------------- footer ---------------*/
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */

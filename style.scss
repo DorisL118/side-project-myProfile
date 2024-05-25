@@ -549,25 +549,53 @@ h2 {
 
 /*--------------- contact ---------------*/
 #contact {
-
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
+    gap: 20px;
 
     .contact-item {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        p {
+    display: flex;
+    align-items: center;
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none; 
+            color: inherit; 
+            img {
+            margin-right: 15px; 
+            }
+
+            p {
             margin: 0;
-            padding: 0;
+            }
+        }
+
+        img {
+            margin-right: 5px;
+        }
+
+        p {
+            margin: 0; 
         }
     }
+    .line {
+        display: flex;
+        align-items: center;
+        color: #acacac;
+    }
+}
 
+
+
+
+
+
+
+
+
+/*--------------- footer ---------------*/
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
