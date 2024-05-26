@@ -438,10 +438,9 @@ h2 {
   margin: 0px 50px;
 }
 #project .project-1 img {
-  width: 60vw;
+  width: 55vw;
   pointer-events: none;
   transform: translateZ(0) rotateX(3deg);
-  padding: 30px;
   transform-style: preserve-3d;
 }
 #project .project-1 img:after {
@@ -452,6 +451,12 @@ h2 {
   left: 0;
   bottom: -50px;
   box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3);
+}
+#project .project-2 p {
+  font-size: 0.8rem;
+}
+#project .project-2 hr {
+  width: 30%;
 }
 
 /*--------------- contact ---------------*/

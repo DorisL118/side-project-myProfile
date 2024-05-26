@@ -521,10 +521,9 @@ h2 {
     margin: 0px 50px;
 
     .project-1 img {
-        width: 60vw;
+        width: 55vw;
         pointer-events: none;
         transform: translateZ(0) rotateX(3deg); // 初始轉換效果
-        padding: 30px;
         transform-style: preserve-3d;
         
         &:after {
@@ -535,6 +534,14 @@ h2 {
             left: 0;
             bottom: -50px;
             box-shadow: 0 30px 20px rgba(0,0,0,.3);
+        }
+    }
+    .project-2 {
+        p {
+            font-size: .8rem;
+        }
+        hr {
+            width: 30%;
         }
     }
 }
