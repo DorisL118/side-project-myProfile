@@ -38,10 +38,13 @@ body {
 
 section:not(#header) {
   display: flex;
-  justify-content: center; /* 穩定 section 垂直置中*/
-  width: 100vw;
-  height: 100vh;
+  justify-content: center;
   background-image: url();
+  width: 100vw;
+  min-height: calc(100vh - 100px); /* 保证内容最小高度为 100vh，但减去上下20px */
+  height: auto !important; /* 高度自动 */
+  padding: 50px 0; /* 上下各留 20px */
+  box-sizing: border-box; /* 确保 padding 包含在高度内 */
   /* 在桌機板上 */
   /* 在平板上 */
   /* 在手機板上 */
@@ -51,17 +54,30 @@ section:not(#header) {
     width: calc(100vw - 200px); /* 左右各留 100px */
     margin: 0 100px;
   }
+  section:not(#header) p {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 1023px) and (min-width: 641px) {
   section:not(#header) {
     width: calc(100vw - 100px); /* 左右各留 50px */
     margin: 0 50px;
   }
+  section:not(#header) p {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 640px) {
   section:not(#header) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: calc(100vw - 20px); /* 左右各留 10px */
     margin: 0 10px;
+  }
+  section:not(#header) p {
+    font-size: 1rem;
   }
 }
 
@@ -79,6 +95,18 @@ section:not(#header) {
 h2 {
   color: var(--primary-color);
   font-weight: 600;
+}
+
+.element {
+  content: "";
+  display: block;
+  margin-bottom: 3em;
+}
+
+br {
+  content: "";
+  display: block;
+  margin-bottom: 1.5em;
 }
 
 /*--------------- animation ---------------*/
@@ -171,6 +199,9 @@ h2 {
   width: 100%;
   transition: background-color 1s ease;
   z-index: 1000;
+  /* 電腦 */
+  /* 平板 */
+  /* 手機板 */
 }
 #nav.nav-transparent {
   background-color: transparent;
@@ -212,6 +243,18 @@ h2 {
   width: 100vw;
   padding: 0 10px;
 }
+@media (max-width: 640px) {
+  #nav #nav .container a {
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.5rem;
+  }
+  #nav .container {
+    height: 100px;
+  }
+}
 
 /*--------------- header ---------------*/
 #header {
@@ -227,7 +270,7 @@ h2 {
 
 /*--------------- header ---------------*/
 #header {
-  height: 120vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -288,13 +331,11 @@ h2 {
 }
 #me .me-content h2 {
   color: var(--primary-color);
-  text-align: center;
 }
 #me .me-content p {
   font-size: 1rem;
   width: 100vw;
   color: var(--text);
-  text-align: center;
 }
 #me .me-photo img {
   width: 30vh;
@@ -325,20 +366,28 @@ h2 {
     background-position: 100% 50%;
   }
 }
-@media (min-width: 821px) {
+@media (min-width: 1024px) {
   #me .me-content p {
-    font-size: 0.8rem;
-    width: 75vh;
+    font-size: 1rem;
+    width: 50vw;
     color: var(--text);
   }
 }
-@media (max-width: 820px) {
+@media (max-width: 1024px) {
   #me .me-photo {
     display: flex;
     flex-direction: column;
   }
   #me .me-photo p {
     width: 40vh;
+  }
+  #me .me-content p {
+    font-size: 1rem;
+    width: 75vw;
+    color: var(--text);
+  }
+  #me .me-photo img:nth-child(1) {
+    display: none;
   }
   #me .me-photo img:nth-child(3) {
     display: none;
@@ -358,8 +407,8 @@ h2 {
     align-items: center; /* 垂直置中 */
     height: 100vh; /* 使用整個視窗的高度 */
   }
-  #me .me-photo img:nth-child(n+2) {
-    display: none;
+  #me #me .me-content p {
+    font-size: 1.5rem !important;
   }
 }
 
@@ -382,6 +431,19 @@ h2 {
   align-items: center;
 }
 
+/* 電腦 */
+/* 平板 */
+@media (max-width: 1024px) {
+  .row :nth-child(4) {
+    display: none;
+  }
+}
+/* 手機板 */
+@media (max-width: 640px) {
+  .row :nth-child(4) {
+    display: block;
+  }
+}
 /*--------------- skills-2 ---------------*/
 #skills {
   /* 平板 */

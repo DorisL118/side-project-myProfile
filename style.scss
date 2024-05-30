@@ -40,29 +40,47 @@ body {
 
 section:not(#header) {
     display: flex;
-    justify-content: center; /* 穩定 section 垂直置中*/
-    width: 100vw;
-    height: 100vh;
+    justify-content: center;
     background-image: url();
+
+    width: 100vw;
+    min-height: calc(100vh - 100px); /* 保证内容最小高度为 100vh，但减去上下20px */
+    height: auto !important; /* 高度自动 */
+    padding: 50px 0; /* 上下各留 20px */
+    box-sizing: border-box; /* 确保 padding 包含在高度内 */
 
     /* 在桌機板上 */
     @media (min-width: 1024px) {
         width: calc(100vw - 200px); /* 左右各留 100px */
         margin: 0 100px;
+        p {
+            font-size: 1rem;
+        }
     }
 
     /* 在平板上 */
     @media (max-width: 1023px) and (min-width: 641px) {
         width: calc(100vw - 100px); /* 左右各留 50px */
         margin: 0 50px;
+        p {
+            font-size: 1rem;
+        }
     }
 
     /* 在手機板上 */
     @media (max-width: 640px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: calc(100vw - 20px); /* 左右各留 10px */
         margin: 0 10px;
+        p {
+            font-size: 1rem ;
+        }
     }
 }
+
 
 :root {
     /*bg color*/
@@ -76,11 +94,26 @@ section:not(#header) {
 
     --text: #6D6A7D;
 }
+
 h2 {
     color: var(--primary-color);
     font-weight: 600;
 }
 
+// 空行
+.element {
+    content: "";
+    display: block;
+    margin-bottom: 3em; 
+    
+}
+// 空行
+br {
+    content: "";
+    display: block;
+    margin-bottom: 1.5em; 
+    
+}
 
 
 
@@ -239,6 +272,27 @@ h2 {
             padding: 0 10px;
         }
     }
+    /* 電腦 */    
+    @media (min-width:1024px){
+
+    }
+    /* 平板 */
+    @media (max-width:1024px){
+
+    }
+    /* 手機板 */
+    @media (max-width:640px){
+        #nav .container a {
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        .container {
+            height: 100px;
+        }
+    } 
 }
 
 
@@ -271,7 +325,7 @@ h2 {
 
 /*--------------- header ---------------*/
 #header {
-    height: 120vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -312,6 +366,11 @@ h2 {
 }
 
 
+
+
+
+
+
 /*--------------- me ---------------*/
 #me {
     flex-direction: column;
@@ -331,13 +390,13 @@ h2 {
 
         h2 {
             color: var(--primary-color);
-            text-align: center;
+            // text-align: center;
         }
         p {
             font-size: 1rem;
             width: 100vw;
             color: var(--text);
-            text-align: center;
+            // text-align: center;
         }
     }
 
@@ -377,15 +436,15 @@ h2 {
 
     /* RWD斷點 */
     /* 電腦 */
-    @media (min-width:821px){
+    @media (min-width:1024px){
         .me-content p {
-            font-size: .8rem;
-            width: 75vh;
+            font-size: 1rem;
+            width: 50vw;
             color: var(--text);
         }
     }
     /* 平板 */
-    @media (max-width:820px){
+    @media (max-width:1024px){
         .me-photo {
             display: flex;
             flex-direction: column;
@@ -393,8 +452,17 @@ h2 {
             p {
             width: 40vh;
             }
-        }          
+        }    
+        
+        .me-content p {
+            font-size: 1rem;
+            width: 75vw;
+            color: var(--text);
+        }
 
+        .me-photo img:nth-child(1) {
+            display: none;
+        }
         .me-photo img:nth-child(3) {
             display: none;
         }
@@ -406,19 +474,23 @@ h2 {
         }
     }
     /* 手機板 */
-    @media (max-width:640px){
+    @media (max-width: 640px) {
         #me {
-            display: flex;
-            flex-direction: column; /* 垂直排列 */
-            justify-content: center; /* 水平置中 */
-            align-items: center; /* 垂直置中 */
-            height: 100vh; /* 使用整個視窗的高度 */
-        }
-        .me-photo img:nth-child(n+2) {
-            display: none;
+        display: flex;
+          flex-direction: column; /* 垂直排列 */
+          justify-content: center; /* 水平置中 */
+          align-items: center; /* 垂直置中 */
+          height: 100vh; /* 使用整個視窗的高度 */
+
+        .me-content p {
+            font-size: 1.5rem !important;
         }
     }
+
+    }
+
 }   
+
 
 
 
@@ -447,6 +519,22 @@ h2 {
         align-items: center;
     }
 }
+/* 電腦 */    
+@media (min-width:1024px){
+
+}
+/* 平板 */
+@media (max-width:1024px){
+    .row :nth-child(4) {
+        display: none;
+    }
+}
+/* 手機板 */
+@media (max-width:640px){
+    .row :nth-child(4) {
+        display: block;
+    }
+} 
 
 
 
