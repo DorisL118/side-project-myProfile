@@ -268,32 +268,33 @@ br {
         }
 
         .row {
-            width: 100vw; 
+            width: 100vw;
             padding: 0 10px;
         }
     }
-    /* 電腦 */    
-    @media (min-width:1024px){
 
+    /* 電腦 */
+    @media (min-width: 1024px) {
+        /* 可以添加電腦版的特定樣式 */
     }
+
     /* 平板 */
-    @media (max-width:1024px){
-
+    @media (max-width: 1024px) and (min-width: 641px) {
+        /* 可以添加平板版的特定樣式 */
     }
+
     /* 手機板 */
-    @media (max-width:640px){
-        #nav .container a {
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1.5rem;
-        }
+    @media (max-width: 640px) {
         .container {
-            height: 100px;
+            height: 70px !important;
+            padding: 0 20px;
         }
-    } 
+        .container a {
+            font-size: 1.9rem !important;
+        }
+    }
 }
+
 
 
 
@@ -385,8 +386,9 @@ br {
             width: 10vw;
         }
     }
+
     .me-content {
-        padding: 30px 0px 0px 0px;
+        padding: 30px 0 0 0;
 
         h2 {
             color: var(--primary-color);
@@ -408,49 +410,49 @@ br {
         animation: morph 10s ease-in-out infinite alternate,
             change 20s linear infinite alternate;
 
-            @keyframes morph {
-                0%,
-                100% {
-                    border-radius: 68% 55% 80% 50% / 68% 60% 70% 55%;
-                }
-                20% {
-                    border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
-                }
-                40% {
-                    border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
-                }
-                60% {
-                    border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
-                }
-                80% {
-                    border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
-                }
+        @keyframes morph {
+            0%, 100% {
+                border-radius: 68% 55% 80% 50% / 68% 60% 70% 55%;
             }
-            
-            @keyframes change {
-                100% {
-                    background-position: 100% 50%;
-                }
+            20% {
+                border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
             }
+            40% {
+                border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
+            }
+            60% {
+                border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
+            }
+            80% {
+                border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
+            }
+        }
+        
+        @keyframes change {
+            100% {
+                background-position: 100% 50%;
+            }
+        }
     }
 
     /* RWD斷點 */
     /* 電腦 */
-    @media (min-width:1024px){
+    @media (min-width: 1024px) {
         .me-content p {
             font-size: 1rem;
             width: 50vw;
             color: var(--text);
         }
     }
+
     /* 平板 */
-    @media (max-width:1024px){
+    @media (max-width: 1024px) {
         .me-photo {
             display: flex;
             flex-direction: column;
         
             p {
-            width: 40vh;
+                width: 40vh;
             }
         }    
         
@@ -470,26 +472,24 @@ br {
             display: flex;
         }
         .me-photo-1 img {
-            margin: 0px 5px 0px 5px;
+            margin: 0 5px;
         }
     }
+
     /* 手機板 */
-    @media (max-width: 640px) {
-        #me {
+    @media (max-width: 1024px) {
         display: flex;
-          flex-direction: column; /* 垂直排列 */
-          justify-content: center; /* 水平置中 */
-          align-items: center; /* 垂直置中 */
-          height: 100vh; /* 使用整個視窗的高度 */
+        flex-direction: column; /* 垂直排列 */
+        justify-content: center; /* 水平置中 */
+        align-items: center; /* 垂直置中 */
+        height: 100vh; /* 使用整個視窗的高度 */
 
         .me-content p {
-            font-size: 1.5rem !important;
+            font-size: 2rem !important;
         }
     }
+}
 
-    }
-
-}   
 
 
 
