@@ -14,6 +14,13 @@
     src: url(../popins-font/popins.woff);
 }
 
+.train-one-regular {
+    font-family: "Train One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 .poppins-regular {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -59,7 +66,7 @@ section:not(#header) {
     }
 
     /* 在平板上 */
-    @media (max-width: 1023px) and (min-width: 641px) {
+    @media (max-width: 1024px) and (min-width: 641px) {
         width: calc(100vw - 100px); /* 左右各留 50px */
         margin: 0 50px;
         p {
@@ -75,8 +82,9 @@ section:not(#header) {
         align-items: center;
         width: calc(100vw - 20px); /* 左右各留 10px */
         margin: 0 10px;
+
         p {
-            font-size: 1rem ;
+            font-size: 1.8rem !important;
         }
     }
 }
@@ -90,6 +98,7 @@ section:not(#header) {
     --primary-color: #FFC88C;
     --sencondary-color: #546763;
     --green: #14bd95;
+    --lightgreen: #9EF3DF;
     --gray: #333333;
 
     --text: #6D6A7D;
@@ -98,6 +107,17 @@ section:not(#header) {
 h2 {
     color: var(--primary-color);
     font-weight: 600;
+}
+
+h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+small {
+    color: var(--lightgreen);
+    font-weight: 600;
+    margin-bottom: 50px;
 }
 
 // 空行
@@ -114,6 +134,7 @@ br {
     margin-bottom: 1.5em; 
     
 }
+
 
 
 
@@ -146,7 +167,7 @@ br {
 
 /*--------------- 轉廠區塊 ---------------*/
 .parallax-scrolling {
-    height: 20vh;
+    height: 25vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -166,11 +187,13 @@ br {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: var(--lightgreen);
+        text-shadow: 1px 1px 2px rgba(70, 70, 70, 0.5);
     }
 
     .fixed-background-section h1 {
+        font-family: "Train One", system-ui;
+        letter-spacing: 4.5px;
         margin: 0;
         font-size: 3em;
         text-align: center;
@@ -180,40 +203,40 @@ br {
         left: 50%;
     }
 }
-.parallax-scrolling {
-    height: 30vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    // opacity: 0.8;
+// .parallax-scrolling {
+//     height: 30vh;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     overflow: hidden;
+//     position: relative;
+//     // opacity: 0.8;
     
-    .fixed-background-section {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-attachment: fixed;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+//     .fixed-background-section {
+//         width: 100%;
+//         height: 100%;
+//         background-size: cover;
+//         background-attachment: fixed;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         color: white;
+//         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+//     }
 
-    .fixed-background-section h1 {
-        margin: 0;
-        font-size: 3em;
-        text-align: center;
-        transform: translate(-50%, -50%);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-    }
-}
+//     .fixed-background-section h1 {
+//         margin: 0;
+//         font-size: 3em;
+//         text-align: center;
+//         transform: translate(-50%, -50%);
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//     }
+// }
 
 
 
@@ -376,6 +399,15 @@ br {
 #me {
     flex-direction: column;
     align-items: center;
+    position: relative;
+
+    .moving-image {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateX(-100%); 
+        animation: moveLeftRight 4s linear infinite; 
+    }
 
     .me-photo {
         display: flex;
@@ -400,6 +432,28 @@ br {
             color: var(--text);
             // text-align: center;
         }
+        
+        @keyframes moveLeftRight {
+            0% {
+            transform: translateX(-50%);
+            }
+            50% {
+            transform: translateX(50%);
+            }
+            100% {
+            transform: translateX(-50%);
+            }
+        }
+        
+        .moving-image {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateX(-100%);
+            animation: moveLeftRight 4s cubic-bezier(0.4, 0.1, 0.6, 1) infinite; /* 使用 cubic-bezier 曲線，模擬彈簧效果 */
+        }
+        
+
     }
 
     .me-photo img {
@@ -446,7 +500,7 @@ br {
     }
 
     /* 平板 */
-    @media (max-width: 1024px) {
+    @media (max-width: 1024px) and (min-width: 641px) {
         .me-photo {
             display: flex;
             flex-direction: column;
@@ -477,18 +531,19 @@ br {
     }
 
     /* 手機板 */
-    @media (max-width: 1024px) {
+    @media (max-width: 640px) {
         display: flex;
-        flex-direction: column; /* 垂直排列 */
-        justify-content: center; /* 水平置中 */
-        align-items: center; /* 垂直置中 */
-        height: 100vh; /* 使用整個視窗的高度 */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
 
         .me-content p {
-            font-size: 2rem !important;
+            font-size: 1.8rem !important;
         }
     }
 }
+
 
 
 
@@ -524,15 +579,18 @@ br {
 
 }
 /* 平板 */
-@media (max-width:1024px){
-    .row :nth-child(4) {
-        display: none;
+@media (max-width: 1024px) and (min-width: 641px){
+    #skills .row {
+        flex-direction: column;
+    }
+    .skill-1 {
+        margin: 50px 0;
     }
 }
 /* 手機板 */
 @media (max-width:640px){
-    .row :nth-child(4) {
-        display: block;
+    #skills .row {
+        flex-direction: column;
     }
 } 
 
@@ -552,14 +610,24 @@ br {
         display: flex;
         flex-wrap: wrap; 
         justify-content: space-around; 
+        // align-items: center;
+        width: 70%;
     }
     
     .smoove {
         flex: 1 1 22%; /* 每個區塊寬度為22%，以確保四個區塊一行 */
-        box-sizing: border-box; /* 包含內邊距和邊框 */
-        margin: 10px; /* 每個區塊之間的間距 */
+        box-sizing: border-box; 
+        margin: 10px; 
     }
     
+    .smoove-b {
+        border: 2px double var(--lightgreen);
+        border-radius: 15px; 
+        padding: 20px; 
+        height: fit-content;
+        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+
     .list-box {
         width: 80%;
         max-width: 1200px;
@@ -567,7 +635,7 @@ br {
     }
     
     /* 平板 */
-    @media (max-width:820px) {
+    @media (max-width: 1024px) and (min-width: 641px) {
         #skills .list-box {
             flex-direction: column;
             height: 65vh;
@@ -632,6 +700,28 @@ br {
             width: 30%;
         }
     }
+
+        /* 電腦 */    
+    @media (min-width:1024px){
+
+    }
+        /* 平板 */
+    @media (max-width: 1024px) and (min-width: 641px) {
+        #project {
+            width: calc(100vw - 200px);
+            margin: 0 100px;
+            display: flex;
+            flex-direction: column !important;
+        }
+        .project-2 {
+            width: 55vw !important;
+        
+        }
+    }
+        /* 手機板 */
+        @media (max-width:640px){
+
+    } 
 }
 
 
