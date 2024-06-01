@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: "Poppins";
-    src: url(../popins-font/popins.woff);
+    src: url(../poppins-font/popins.woff);
 }
 
 .train-one-regular {
@@ -51,10 +51,10 @@ section:not(#header) {
     background-image: url();
 
     width: 100vw;
-    min-height: calc(100vh - 100px); /* 保证内容最小高度为 100vh，但减去上下20px */
-    height: auto !important; /* 高度自动 */
-    padding: 50px 0; /* 上下各留 20px */
-    box-sizing: border-box; /* 确保 padding 包含在高度内 */
+    min-height: calc(100vh - 100px); /* 保證内容最小高度 100vh 减去上下20px */
+    height: auto !important;
+    padding: 50px 0; 
+    box-sizing: border-box; /* 確保 padding 包含在高度内 */
 
     /* 在桌機板上 */
     @media (min-width: 1024px) {
@@ -66,7 +66,7 @@ section:not(#header) {
     }
 
     /* 在平板上 */
-    @media (max-width: 1024px) and (min-width: 641px) {
+    @media (max-width: 1023px) and (min-width: 641px) {
         width: calc(100vw - 100px); /* 左右各留 50px */
         margin: 0 50px;
         p {
@@ -253,6 +253,7 @@ br {
 
     &.nav-transparent {
         background-color: transparent;
+
         a {
             color: #FFFF;
         }
@@ -260,18 +261,20 @@ br {
 
     &.nav-colored {
         background-color: var(--primary-color);
+
         .container {
             background-color: var(--primary-color);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
+
         a {
             color: #FFFF;
         }
     }
 
     .container {
-        width: 100vw;
-        max-width: 100%;
+        width: 100%;
+        max-width: 100vw;
         height: 50px;
         position: fixed;
         top: 0;
@@ -291,32 +294,34 @@ br {
         }
 
         .row {
-            width: 100vw;
+            width: 100%;
             padding: 0 10px;
         }
     }
 
     /* 電腦 */
     @media (min-width: 1024px) {
-        /* 可以添加電腦版的特定樣式 */
+
     }
 
     /* 平板 */
-    @media (max-width: 1024px) and (min-width: 641px) {
-        /* 可以添加平板版的特定樣式 */
+    @media (max-width: 1023px) and (min-width: 641px) {
+        
     }
 
     /* 手機板 */
     @media (max-width: 640px) {
         .container {
-            height: 70px !important;
+            height: 70px;
             padding: 0 20px;
         }
+
         .container a {
-            font-size: 1.9rem !important;
+            font-size: 1.8rem;
         }
     }
 }
+
 
 
 
@@ -397,6 +402,7 @@ br {
 
 /*--------------- me ---------------*/
 #me {
+    display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -405,8 +411,8 @@ br {
         position: absolute;
         top: 50%;
         left: 0;
-        transform: translateX(-100%); 
-        animation: moveLeftRight 4s linear infinite; 
+        transform: translateX(-100%);
+        animation: moveLeftRight 4s cubic-bezier(0.4, 0.1, 0.6, 1) infinite; /* 使用 cubic-bezier 曲線，模擬彈簧效果 */
     }
 
     .me-photo {
@@ -432,28 +438,18 @@ br {
             color: var(--text);
             // text-align: center;
         }
-        
-        @keyframes moveLeftRight {
-            0% {
-            transform: translateX(-50%);
-            }
-            50% {
-            transform: translateX(50%);
-            }
-            100% {
-            transform: translateX(-50%);
-            }
-        }
-        
-        .moving-image {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateX(-100%);
-            animation: moveLeftRight 4s cubic-bezier(0.4, 0.1, 0.6, 1) infinite; /* 使用 cubic-bezier 曲線，模擬彈簧效果 */
-        }
-        
+    }
 
+    @keyframes moveLeftRight {
+        0% {
+            transform: translateX(-50%);
+        }
+        50% {
+            transform: translateX(50%);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
     }
 
     .me-photo img {
@@ -500,7 +496,7 @@ br {
     }
 
     /* 平板 */
-    @media (max-width: 1024px) and (min-width: 641px) {
+    @media (max-width: 1023px) and (min-width: 641px) {
         .me-photo {
             display: flex;
             flex-direction: column;
@@ -532,7 +528,6 @@ br {
 
     /* 手機板 */
     @media (max-width: 640px) {
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -543,6 +538,7 @@ br {
         }
     }
 }
+
 
 
 
@@ -579,7 +575,7 @@ br {
 
 }
 /* 平板 */
-@media (max-width: 1024px) and (min-width: 641px){
+@media (max-width: 1023px) and (min-width: 641px){
     #skills .row {
         flex-direction: column;
     }
@@ -635,7 +631,7 @@ br {
     }
     
     /* 平板 */
-    @media (max-width: 1024px) and (min-width: 641px) {
+    @media (max-width: 1023px) and (min-width: 641px) {
         #skills .list-box {
             flex-direction: column;
             height: 65vh;
@@ -686,10 +682,11 @@ br {
             content: " ";
             width: 100%;
             height: 10px;
+            position: absolute; // 添加 position 屬性
             border-radius: 50%;
             left: 0;
             bottom: -50px;
-            box-shadow: 0 30px 20px rgba(0,0,0,.3);
+            box-shadow: 0 30px 20px rgba(0, 0, 0, .3);
         }
     }
     .project-2 {
@@ -701,28 +698,28 @@ br {
         }
     }
 
-        /* 電腦 */    
-    @media (min-width:1024px){
-
+    /* 電腦 */
+    @media (min-width: 1024px) {
+        // 可選的電腦版樣式
     }
-        /* 平板 */
-    @media (max-width: 1024px) and (min-width: 641px) {
-        #project {
-            width: calc(100vw - 200px);
-            margin: 0 100px;
-            display: flex;
-            flex-direction: column !important;
-        }
+    
+    /* 平板 */
+    @media (max-width: 1023px) and (min-width: 641px) {
+        width: calc(100vw - 200px);
+        margin: 0 100px;
+        flex-direction: column;
+
         .project-2 {
             width: 55vw !important;
-        
         }
     }
-        /* 手機板 */
-        @media (max-width:640px){
 
-    } 
+    /* 手機板 */
+    @media (max-width: 640px) {
+        flex-direction: column;
+    }
 }
+
 
 
 
