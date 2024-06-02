@@ -83,7 +83,7 @@ section:not(#header) {
     margin: 0 10px;
   }
   section:not(#header) p {
-    font-size: 1.8rem !important;
+    font-size: 1.4rem !important;
   }
 }
 
@@ -237,7 +237,7 @@ br {
     padding: 0 20px;
   }
   #nav .container a {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -548,10 +548,19 @@ br {
   #project .project-2 {
     width: 55vw !important;
   }
+  #project .project-2 p {
+    font-size: 1rem;
+  }
 }
 @media (max-width: 640px) {
   #project {
     flex-direction: column;
+  }
+  #project .project-2 {
+    width: 55vw !important;
+  }
+  #project .project-2 p {
+    font-size: 1.4rem;
   }
 }
 

@@ -42,7 +42,7 @@ body {
     background-image: url('./img/p-bg.svg'); 
     background-size: cover; 
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
 }
 
 section:not(#header) {
@@ -84,7 +84,7 @@ section:not(#header) {
         margin: 0 10px;
 
         p {
-            font-size: 1.8rem !important;
+            font-size: 1.4rem !important;
         }
     }
 }
@@ -306,7 +306,7 @@ br {
 
     /* 平板 */
     @media (max-width: 1023px) and (min-width: 641px) {
-        
+
     }
 
     /* 手機板 */
@@ -317,7 +317,7 @@ br {
         }
 
         .container a {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
     }
 }
@@ -700,7 +700,7 @@ br {
 
     /* 電腦 */
     @media (min-width: 1024px) {
-        // 可選的電腦版樣式
+
     }
     
     /* 平板 */
@@ -711,12 +711,21 @@ br {
 
         .project-2 {
             width: 55vw !important;
+            p {
+                font-size: 1rem;
+            }
         }
     }
 
     /* 手機板 */
     @media (max-width: 640px) {
         flex-direction: column;
+        .project-2 {
+            width: 55vw !important;
+            p {
+                font-size: 1.4rem;
+            }
+        }
     }
 }
 
