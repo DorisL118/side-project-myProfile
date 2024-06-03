@@ -853,6 +853,10 @@ br {
     p {
         white-space: nowrap; // 確保文本不會自動換行
         letter-spacing: 0; // 確保字母之間沒有額外的間距
+        color: var(--primary-color);
+    }
+    img {
+        margin: 0 30px;
     }
     
     

@@ -650,4 +650,8 @@ br {
 .footer p {
   white-space: nowrap;
   letter-spacing: 0;
+  color: var(--primary-color);
+}
+.footer img {
+  margin: 0 30px;
 }/*# sourceMappingURL=style.css.map */
