@@ -828,7 +828,13 @@ br {
         align-items: center;
         color: #acacac;
     }
-
+    .download button {
+        background-color: transparent;
+        border: none;
+        color: var(--primary-color);
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
 }
 
 
