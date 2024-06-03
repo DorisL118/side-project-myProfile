@@ -66,14 +66,14 @@ $(document).ready(function() {
     });
 
 
-    document.getElementById("downloadButton").addEventListener("click", function() {
-        // 創建一個隱藏的 <a> 標籤來下載 PDF
-        var link = document.createElement("a");
-        link.href = "https://drive.google.com/file/d/1ptkygs7uvODpZ_vBCHdnOTKDn0kQwSxD/view?usp=sharing"; // 將路徑替換為你的 PDF 文件路徑
-        link.download = "resume.pdf"; // 設置下載文件的名稱
-        document.body.appendChild(link); // 將 <a> 標籤添加到頁面上，這樣才能進行點擊下載
-        link.click(); // 模擬點擊
-        document.body.removeChild(link); // 點擊完成後移除 <a> 標籤
-    });
+    // document.getElementById("downloadButton").addEventListener("click", function() {
+    //     // 創建一個隱藏的 <a> 標籤來下載 PDF
+    //     var link = document.createElement("a");
+    //     link.href = "https://drive.google.com/file/d/1ptkygs7uvODpZ_vBCHdnOTKDn0kQwSxD/view?usp=sharing"; // 將路徑替換為你的 PDF 文件路徑
+    //     link.download = "resume.pdf"; // 設置下載文件的名稱
+    //     document.body.appendChild(link); // 將 <a> 標籤添加到頁面上，這樣才能進行點擊下載
+    //     link.click(); // 模擬點擊
+    //     document.body.removeChild(link); // 點擊完成後移除 <a> 標籤
+    // });
     
 });
