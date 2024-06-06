@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"
+        integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet"> -->
+    <!-- Link Swiper's CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+    <style>
+        @font-face {
+            font-family: "noto-sans-tc";
+            src: url(../noto-sans-tc-font/noto-sans-tc.woff);
+        }
+
+        .roboto-medium {
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #ffc78c86;
+            font-family: "Roboto", sans-serif;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            font-weight: 500;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .swiper {
+            width: 40%;
+            height: 100%;
+            margin-left: 50px;
+        }
+
+        .swiper2 {
+            width: 20%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            width: 100%;
+            min-height: 100%;
+            height: auto;
+            object-fit: inherit;
+        }
+
+        .swiper-title {
+            width: 50%;
+            margin: 0 50px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        br {
+            content: "";
+            display: block;
+            margin-bottom: 1.3em;
+        }
+
+        /* 電腦版 */
+        @media (min-width: 1025px) {
+            .swiper-title p {
+                font-size: 1rem;
+            }
+        }
+
+        /* 平板 */
+        @media (max-width: 1024px) and (min-width: 641px) {
+            body {
+                display: block;
+            }
+
+            .swiper {
+                width: 40%;
+                height: 55%;
+                margin-left: 50px;
+            }
+
+            .swiper-title {
+                width: 90%;
+                margin: 0 50px 0 50px;
+            }
+
+            .swiper-title p {
+                font-size: 1rem;
+            }
+        }
+
+        /* 手機 */
+        @media (max-width: 640px) {
+            .swiper {
+                display: none;
+            }
+
+            .swiper-title {
+                width: 100%;
+                margin: 0 50px 0 50px;
+            }
+
+            .swiper-title p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/img/project-1-10.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-1-1-1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-1-1-2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-1-1-3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-1-1-4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-1-1-5.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-1-1-6.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-5.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/img/project-6.jpg" alt=""></div>
+
+        </div>
+    </div>
+
+    <div class="swiper-title">
+        <p>
+            POCA 是我進修前端開發後完成的首個作品集，在專案中我全權負責前端開發工作。
+            與之前的形象網站相比，這次項目更加複雜和功能豐富，我運用了 React 框架實現各種功能，包括文章篩選、購物車、物件元件化以及資料處理，同時為了後續的維護，我會將重複的項目元件化，例如：文章與產品等。
+            <br>
+            在無後端支援的情況下，我會架構出 React copmponent 並以 object 的方式呼喚傳送資料，若後續文章或產品項目有需異動，可以節省維護時間，以及使用 localStorage
+            暫存資料，解決資料保存的問題。
+            <br>
+            使用第三方 API Mapbox 解決地圖顯示和交互問題，在網站中嵌入地圖並設計 POCA 獨特的咖啡 pin，增加網站的設計感與使用體驗。
+            <br>
+            同時我也發現使用者更喜歡使用標籤來搜尋內容，而不是依賴文章風格或發布時間。為此，我根據標籤數據新增了熱門標籤，提升了文章搜尋的便捷性。此外，我還注意到地址和菜單是常見的搜尋項目將其整合，解決咖啡廳資訊零散的問題，進一步提升使用者體驗。
+            <br>
+            在開發過程中，也不免遇到一些挑戰，查閱官方文件，正確使用 dependency，解決數據動態渲染錯誤的問題，並從中學習到了許多寶貴的經驗，這使我對前端設計開發有更深的理解與掌握，期待未來能參與不同的專案。
+        </p>
+    </div>
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            direction: 'vertical',
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true, // 啟用循環模式
+            autoplay: {
+                delay: 0, // 設定為 0 使其連續滾動
+                disableOnInteraction: false, // 使用者互動後是否停止自動輪播，設置為 false 表示不停止
+            },
+            speed: 3000, // 設定自動滾動速度（毫秒），此處設定為 3 秒
+        });
+
+        // 停止自動輪播
+        swiper.el.addEventListener("mouseenter", function () {
+            swiper.autoplay.stop();
+        });
+
+        // 啟動自動輪播
+        swiper.el.addEventListener("mouseleave", function () {
+            swiper.autoplay.start();
+        });
+
+
+    </script>
+</body>
+
+</html>

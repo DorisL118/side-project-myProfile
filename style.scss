@@ -9,10 +9,6 @@
     src: url(../noto-sans-tc-font/noto-sans-tc.woff);
 }
 
-@font-face {
-    font-family: "Poppins";
-    src: url(../poppins-font/popins.woff);
-}
 
 .train-one-regular {
     font-family: "Train One", system-ui;
@@ -56,7 +52,7 @@ section:not(#header) {
     box-sizing: border-box; /* 確保 padding 包含在高度内 */
 
     /* 在桌機板上 */
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
         width: calc(100% - 200px); /* 左右各留 100px */
         margin: 0 100px;
         p {
@@ -65,7 +61,7 @@ section:not(#header) {
     }
 
     /* 在平板上 */
-    @media (max-width: 1023px) and (min-width: 641px) {
+    @media (max-width: 1024px) and (min-width: 641px) {
         width: calc(100% - 100px); /* 左右各留 50px */
         margin: 0 50px;
         p {
@@ -85,7 +81,7 @@ section:not(#header) {
         height: auto !important;        
 
         p {
-            font-size: 0.9rem !important;
+            font-size: 0.8rem !important;
         }
     }
 }
@@ -116,7 +112,7 @@ h5 {
 }
 
 small {
-    color: var(--lightgreen);
+    color: var(--green);
     font-weight: 600;
     margin-bottom: 50px;
 }
@@ -138,6 +134,25 @@ br {
 
 hr {
     color: var(--green);
+}
+
+iframe {
+    border: 0;
+    width: 100%;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--green);
+    font-weight: 500;
+
+    &:hover {
+        color: var(--lightgreen);
+    }
 }
 
 
@@ -304,12 +319,12 @@ hr {
     }
 
     /* 電腦 */
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
 
     }
 
     /* 平板 */
-    @media (max-width: 1023px) and (min-width: 641px) {
+    @media (max-width: 1024px) and (min-width: 641px) {
 
     }
 
@@ -495,7 +510,7 @@ hr {
 
     /* RWD斷點 */
     /* 電腦 */
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
         .me-content {
             width: 50%;
             p {
@@ -507,7 +522,7 @@ hr {
     }
 
     /* 平板 */
-    @media (max-width: 1023px) and (min-width: 641px) {
+    @media (max-width: 1024px) and (min-width: 641px) {
             .me-content {
                 width: 80%;
                 .me-photo {
@@ -652,6 +667,9 @@ hr {
 
 
 
+
+
+
 /*--------------- skills-2 ---------------*/
 #skills {
     section {
@@ -674,7 +692,7 @@ hr {
     
     .smoove-b {
         border: 2px double var(--lightgreen);
-        border-radius: 15px; 
+        border-radius: 0 50px 50px 50px;
         padding: 20px; 
         height: fit-content;
         // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -687,7 +705,7 @@ hr {
     }
     
     /* 平板 */
-    @media (max-width: 1023px) and (min-width: 641px) {
+    @media (max-width: 1024px) and (min-width: 641px) {
         #skills .list-box {
             flex-direction: column;
             height: 65vh;
@@ -728,6 +746,9 @@ hr {
     align-items: center;
     margin: 0px 50px;
 
+    .project-1 {
+        width: 50%;
+    }
     .project-1 img {
         width: 100%;
         pointer-events: none;
@@ -746,6 +767,7 @@ hr {
         }
     }
     .project-2 {
+        width: 50%;
         p {
             font-size: .8rem;
         }
@@ -755,12 +777,12 @@ hr {
     }
 
     /* 電腦 */
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
 
     }
     
     /* 平板 */
-    @media (max-width: 1023px) and (min-width: 641px) {
+    @media (max-width: 1024px) and (min-width: 641px) {
         width: calc(100% - 200px);
         margin: 0 100px;
         flex-direction: column;
@@ -770,6 +792,9 @@ hr {
             p {
                 font-size: 1rem;
             }
+        }
+        .project-1 {
+            width: 90%;
         }
     }
 
@@ -781,6 +806,9 @@ hr {
             p {
                 font-size: 1rem;
             }
+        }
+        .project-1 {
+            width: 90%;
         }
     }
 }

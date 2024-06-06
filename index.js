@@ -75,5 +75,50 @@ $(document).ready(function() {
     //     link.click(); // 模擬點擊
     //     document.body.removeChild(link); // 點擊完成後移除 <a> 標籤
     // });
+
+    var swiper = new Swiper(".mySwiper", {
+        direction: 'vertical',
+        slidesPerView: 3,
+        spaceBetween: 0,
+        loop: true, // 啟用循環模式
+        autoplay: {
+            delay: 0, // 設定為 0 使其連續滾動
+            disableOnInteraction: false, // 使用者互動後是否停止自動輪播，設置為 false 表示不停止
+        },
+        speed: 3000, // 設定自動滾動速度（毫秒），此處設定為 3 秒
+    });
+
+    // 停止自動輪播
+    swiper.el.addEventListener("mouseenter", function () {
+        swiper.autoplay.stop();
+    });
+
+    // 啟動自動輪播
+    swiper.el.addEventListener("mouseleave", function () {
+        swiper.autoplay.start();
+    });
+
+
+    var swiper2 = new Swiper(".mySwiper2", {
+        direction: 'vertical',
+        slidesPerView: 4,
+        spaceBetween: 0,
+        loop: true, // 啟用循環模式
+        autoplay: {
+            delay: 0, // 設定為 0 使其連續滾動
+            disableOnInteraction: false, // 使用者互動後是否停止自動輪播，設置為 false 表示不停止
+        },
+        speed: 1000, // 設定自動滾動速度（毫秒），此處設定為 3 秒
+    });
+
+    // 停止自動輪播
+    swiper2.addEventListener("mouseenter", function () {
+        swiper.autoplay.stop();
+    });
+
+    // 啟動自動輪播
+    swiper2.addEventListener("mouseleave", function () {
+        swiper.autoplay.start();
+    });
     
 });
