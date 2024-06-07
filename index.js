@@ -1,5 +1,5 @@
 // 確保文檔加載完畢後再執行代碼
-$(document).ready(function() {
+$(document).ready(function () {
     // 初始化 smoove 插件
     $(".smoove").smoove({
         offset: "40%",
@@ -12,23 +12,25 @@ $(document).ready(function() {
     });
 
     // 滾動時更改導航欄背景色
-    window.addEventListener('scroll', function() {
-        var nav = document.getElementById('nav');
-        if (window.scrollY > 100) { // 超過 100 像素後添加背景色
-            nav.classList.remove('nav-transparent');
-            nav.classList.add('nav-colored');
-        } else { // 否則保持透明背景
-            nav.classList.remove('nav-colored');
-            nav.classList.add('nav-transparent');
+    window.addEventListener("scroll", function () {
+        var nav = document.getElementById("nav");
+        if (window.scrollY > 100) {
+        // 超過 100 像素後添加背景色
+        nav.classList.remove("nav-transparent");
+        nav.classList.add("nav-colored");
+        } else {
+        // 否則保持透明背景
+        nav.classList.remove("nav-colored");
+        nav.classList.add("nav-transparent");
         }
     });
 
     // 追踪鼠標移動
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('resize', handleWindowResize);
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("resize", handleWindowResize);
 
-    const spansSlow = document.querySelectorAll('.spanSlow');
-    const spansFast = document.querySelectorAll('.spanFast');
+    const spansSlow = document.querySelectorAll(".spanSlow");
+    const spansFast = document.querySelectorAll(".spanFast");
 
     let width = window.innerWidth;
 
@@ -37,10 +39,10 @@ $(document).ready(function() {
         let speedSlow = 100 * normalizedPosition;
         let speedFast = 200 * normalizedPosition;
         spansSlow.forEach((span) => {
-            span.style.transform = `translate(${speedSlow}px)`;
+        span.style.transform = `translate(${speedSlow}px)`;
         });
         spansFast.forEach((span) => {
-            span.style.transform = `translate(${speedFast}px)`;
+        span.style.transform = `translate(${speedFast}px)`;
         });
     }
 
@@ -54,7 +56,7 @@ $(document).ready(function() {
     var maxRotationX = 20; // X軸最大旋轉角度
     var maxRotationY = 20; // Y軸最大旋轉角度
 
-    $(document).on("mousemove", function(e) {
+    $(document).on("mousemove", function (e) {
         var ax = -($(window).innerWidth() / 2 - e.pageX) / 20;
         var ay = ($(window).innerHeight() / 2 - e.pageY) / 20;
 
@@ -62,9 +64,23 @@ $(document).ready(function() {
         ax = Math.min(Math.max(ax, -maxRotationX), maxRotationX);
         ay = Math.min(Math.max(ay, -maxRotationY), maxRotationY);
 
-        card.attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
+        card.attr(
+        "style",
+        "transform: rotateY(" +
+            ax +
+            "deg) rotateX(" +
+            ay +
+            "deg);-webkit-transform: rotateY(" +
+            ax +
+            "deg) rotateX(" +
+            ay +
+            "deg);-moz-transform: rotateY(" +
+            ax +
+            "deg) rotateX(" +
+            ay +
+            "deg)"
+        );
     });
-
 
     // document.getElementById("downloadButton").addEventListener("click", function() {
     //     // 創建一個隱藏的 <a> 標籤來下載 PDF
@@ -77,13 +93,13 @@ $(document).ready(function() {
     // });
 
     var swiper = new Swiper(".mySwiper", {
-        direction: 'vertical',
+        direction: "vertical",
         slidesPerView: 3,
         spaceBetween: 0,
         loop: true, // 啟用循環模式
         autoplay: {
-            delay: 0, // 設定為 0 使其連續滾動
-            disableOnInteraction: false, // 使用者互動後是否停止自動輪播，設置為 false 表示不停止
+        delay: 0, // 設定為 0 使其連續滾動
+        disableOnInteraction: false, // 使用者互動後是否停止自動輪播，設置為 false 表示不停止
         },
         speed: 3000, // 設定自動滾動速度（毫秒），此處設定為 3 秒
     });
@@ -98,15 +114,14 @@ $(document).ready(function() {
         swiper.autoplay.start();
     });
 
-
     var swiper2 = new Swiper(".mySwiper2", {
-        direction: 'vertical',
+        direction: "vertical",
         slidesPerView: 4,
         spaceBetween: 0,
         loop: true, // 啟用循環模式
         autoplay: {
-            delay: 0, // 設定為 0 使其連續滾動
-            disableOnInteraction: false, // 使用者互動後是否停止自動輪播，設置為 false 表示不停止
+        delay: 0, // 設定為 0 使其連續滾動
+        disableOnInteraction: false, // 使用者互動後是否停止自動輪播，設置為 false 表示不停止
         },
         speed: 1000, // 設定自動滾動速度（毫秒），此處設定為 3 秒
     });
@@ -120,5 +135,46 @@ $(document).ready(function() {
     swiper2.addEventListener("mouseleave", function () {
         swiper.autoplay.start();
     });
-    
+
+    let SwiperTop = new Swiper(".swiper--top", {
+        spaceBetween: 0,
+        centeredSlides: true,
+        speed: 6000,
+        autoplay: {
+        delay: 1,
+        },
+        loop: true,
+        slidesPerView: "auto",
+        allowTouchMove: false,
+        disableOnInteraction: true,
+    });
+
+    let SwiperBottom = new Swiper(".swiper--bottom", {
+        spaceBetween: 0,
+        centeredSlides: true,
+        speed: 6000,
+        autoplay: {
+        delay: 1,
+        reverseDirection: true,
+        },
+        loop: true,
+        loopedSlides: 4,
+        slidesPerView: "auto",
+        allowTouchMove: false,
+        disableOnInteraction: true,
+    });
 });
+
+    let SwiperTop = new Swiper('.swiper--top', {
+        spaceBetween: 0,
+        centeredSlides: true,
+        speed: 6000,
+        autoplay: {
+        delay: 1,
+        },
+        loop: true,
+        slidesPerView:'auto',
+        allowTouchMove: false,
+        disableOnInteraction: true
+    });
+

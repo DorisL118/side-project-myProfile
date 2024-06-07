@@ -25,16 +25,17 @@
 p {
     color: var(--text);
     font-weight: 500;
+    letter-spacing: 1.2px;
 }
 body, html {
     margin: 0;
     padding: 0;
-    font-family: "noto-sans-tc", "Poppins";
+    font-family: "Roboto", sans-serif;
     overflow-x: hidden;
 }
 
 body {
-    background-image: url('./img/p-bg.svg'); 
+    background-color: var(--bg-color-1);
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat; 
@@ -89,13 +90,13 @@ section:not(#header) {
 
 :root {
     /*bg color*/
-    --bg-color-1: #F6F7F2;
+    --bg-color-1: #ffffff;
 
     /*main color*/
-    --primary-color: #FFC88C;
-    --sencondary-color: #546763;
-    --green: #14bd95;
-    --lightgreen: #9EF3DF;
+    --primary-color: #151515;
+    --sencondary-color: #575757;
+    --green: #636363;
+    --lightgreen: #929292;
     --gray: #333333;
 
     --text: #6D6A7D;
@@ -104,6 +105,7 @@ section:not(#header) {
 h2 {
     color: var(--primary-color);
     font-weight: 600;
+    font-size: 26px;
 }
 
 h5 {
@@ -136,10 +138,18 @@ hr {
     color: var(--green);
 }
 
-iframe {
+iframe:not(.tag) {
     border: 0;
     width: 100%;
     height: 90vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.tag{
+    border: 0;
+    width: 100%;
+    height: 22vh;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -210,7 +220,7 @@ a {
         text-shadow: 1px 1px 2px rgba(70, 70, 70, 0.5);
     }
 
-    .fixed-background-section h1 {
+    .fixed-background-section h2 {
         font-family: "Train One", system-ui;
         letter-spacing: 4.5px;
         margin: 0;
@@ -274,7 +284,7 @@ a {
         background-color: transparent;
 
         a {
-            color: #FFFF;
+            color: var(--primary-color);
         }
     }
 
@@ -506,6 +516,62 @@ a {
                 background-position: 100% 50%;
             }
         }
+
+        .tiny {
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            &:after {
+            content: '';
+            display: block;
+            width: 200%;
+            height: 1px;
+            background: linear-gradient(90deg, black 50%, transparent 50%);
+            background-size: 10% 1px;
+            background-position: -50px;
+            background-repeat: repeat-x;
+            position: absolute;
+            left: -10%;
+            top: 40%;
+            animation: line-slide 60s forwards infinite linear;
+            z-index: 1;
+            }
+            &.swiper--bottom {
+            &:after {
+                animation-direction: reverse;
+            }
+            }
+        }
+        .swiper-wrapper{
+            -webkit-transition-timing-function:linear!important;    transition-timing-function:linear!important; 
+            position: relative;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 33px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            position: relative;
+            overflow: hidden;
+            padding: 0 50px;
+        }
+        
+        @keyframes line-slide {
+            0% {
+            background-position: -5% 0;
+            }
+            100% {
+            background-position: 100% 0;
+            }
+        }        
     }
 
     /* RWD斷點 */
@@ -609,7 +675,7 @@ a {
 /*--------------- skills-1 ---------------*/
 .row {
     section {
-        height: 50vh !important;
+        height: 10vh;
     }
 
     .skill-1 {
@@ -674,14 +740,13 @@ a {
 #skills {
     section {
         justify-content: center;
-
     }
     .row {
         display: flex;
         flex-wrap: wrap; 
         justify-content: space-around; 
-        // align-items: center;
-        width: 70%;
+        align-items: center;
+        width: 90%;
     }
     
     .smoove {

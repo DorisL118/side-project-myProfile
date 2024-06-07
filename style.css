@@ -21,17 +21,18 @@
 p {
   color: var(--text);
   font-weight: 500;
+  letter-spacing: 1.2px;
 }
 
 body, html {
   margin: 0;
   padding: 0;
-  font-family: "noto-sans-tc", "Poppins";
+  font-family: "Roboto", sans-serif;
   overflow-x: hidden;
 }
 
 body {
-  background-image: url("./img/p-bg.svg");
+  background-color: var(--bg-color-1);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -86,12 +87,12 @@ section:not(#header) {
 
 :root {
   /*bg color*/
-  --bg-color-1: #F6F7F2;
+  --bg-color-1: #ffffff;
   /*main color*/
-  --primary-color: #FFC88C;
-  --sencondary-color: #546763;
-  --green: #14bd95;
-  --lightgreen: #9EF3DF;
+  --primary-color: #151515;
+  --sencondary-color: #575757;
+  --green: #636363;
+  --lightgreen: #929292;
   --gray: #333333;
   --text: #6D6A7D;
 }
@@ -99,6 +100,7 @@ section:not(#header) {
 h2 {
   color: var(--primary-color);
   font-weight: 600;
+  font-size: 26px;
 }
 
 h5 {
@@ -128,10 +130,19 @@ hr {
   color: var(--green);
 }
 
-iframe {
+iframe:not(.tag) {
   border: 0;
   width: 100%;
   height: 90vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.tag {
+  border: 0;
+  width: 100%;
+  height: 22vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -187,7 +198,7 @@ a:hover {
   color: var(--lightgreen);
   text-shadow: 1px 1px 2px rgba(70, 70, 70, 0.5);
 }
-.parallax-scrolling .fixed-background-section h1 {
+.parallax-scrolling .fixed-background-section h2 {
   font-family: "Train One", system-ui;
   letter-spacing: 4.5px;
   margin: 0;
@@ -214,7 +225,7 @@ a:hover {
   background-color: transparent;
 }
 #nav.nav-transparent a {
-  color: white;
+  color: var(--primary-color);
 }
 #nav.nav-colored {
   background-color: var(--primary-color);
@@ -394,6 +405,58 @@ a:hover {
     background-position: 100% 50%;
   }
 }
+#me .me-photo img .tiny {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#me .me-photo img .swiper-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#me .me-photo img .swiper-container:after {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 1px;
+  background: linear-gradient(90deg, black 50%, transparent 50%);
+  background-size: 10% 1px;
+  background-position: -50px;
+  background-repeat: repeat-x;
+  position: absolute;
+  left: -10%;
+  top: 40%;
+  animation: line-slide 60s forwards infinite linear;
+  z-index: 1;
+}
+#me .me-photo img .swiper-container.swiper--bottom:after {
+  animation-direction: reverse;
+}
+#me .me-photo img .swiper-wrapper {
+  transition-timing-function: linear !important;
+  position: relative;
+}
+#me .me-photo img .swiper-slide {
+  text-align: center;
+  font-size: 33px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+  padding: 0 50px;
+}
+@keyframes line-slide {
+  0% {
+    background-position: -5% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
 @media (min-width: 1025px) {
   #me .me-content {
     width: 50%;
@@ -459,7 +522,7 @@ a:hover {
 
 /*--------------- skills-1 ---------------*/
 .row section {
-  height: 50vh !important;
+  height: 10vh;
 }
 .row .skill-1 {
   width: 40%;
@@ -517,7 +580,8 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 70%;
+  align-items: center;
+  width: 90%;
 }
 #skills .smoove {
   flex: 1 1 22%; /* 每個區塊寬度為22%，以確保四個區塊一行 */
