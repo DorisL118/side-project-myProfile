@@ -98,7 +98,8 @@
             width: 50%;
             margin: 0 50px 0 0;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             justify-content: center;
         }
 
@@ -106,6 +107,11 @@
             content: "";
             display: block;
             margin-bottom: 1.3em;
+        }
+
+        h2 {
+            color: #14bd95;
+            font-size: 600;
         }
 
         /* 電腦版 */
@@ -176,6 +182,7 @@
     </div>
 
     <div class="swiper-title">
+        <h2>問題與挑戰？</h2>
         <p>
             POCA 是我進修前端開發後完成的首個作品集，在專案中我全權負責前端開發工作。
             與之前的形象網站相比，這次項目更加複雜和功能豐富，我運用了 React 框架實現各種功能，包括文章篩選、購物車、物件元件化以及資料處理，同時為了後續的維護，我會將重複的項目元件化，例如：文章與產品等。
