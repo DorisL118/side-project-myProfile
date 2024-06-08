@@ -57,7 +57,7 @@ section:not(#header) {
         width: calc(100% - 200px); /* 左右各留 100px */
         margin: 0 100px;
         p {
-            font-size: 1rem !important;
+            font-size: 0.9rem !important;
         }
     }
 
@@ -66,7 +66,7 @@ section:not(#header) {
         width: calc(100% - 100px); /* 左右各留 50px */
         margin: 0 50px;
         p {
-            font-size: 1rem !important;
+            font-size: 0.9rem !important;
         }
     }
 
@@ -95,17 +95,18 @@ section:not(#header) {
     /*main color*/
     --primary-color: #151515;
     --sencondary-color: #575757;
-    --green: #636363;
-    --lightgreen: #929292;
+    --lightgray-2: #636363;
+    --lightgray-1: #929292;
     --gray: #333333;
+    --p: #C99AE4;
 
     --text: #6D6A7D;
 }
 
 h2 {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 26px;
+    color: var(--p);
+    font-weight: 550;
+    font-size: 20px;
 }
 
 h5 {
@@ -114,8 +115,8 @@ h5 {
 }
 
 small {
-    color: var(--green);
-    font-weight: 600;
+    color: var(--lightgray-2);
+    font-weight: 550;
     margin-bottom: 50px;
 }
 
@@ -135,7 +136,7 @@ br {
 }
 
 hr {
-    color: var(--green);
+    color: #C99AE4;
 }
 
 iframe:not(.tag, .timeline) {
@@ -163,11 +164,11 @@ iframe:not(.tag, .timeline) {
 
 a {
     text-decoration: none;
-    color: var(--green);
+    color: var(--lightgray-2);
     font-weight: 500;
 
     &:hover {
-        color: var(--lightgreen);
+        color: var(--lightgray-1);
     }
 }
 
@@ -222,7 +223,7 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--lightgreen);
+        color: var(--lightgray-1);
         text-shadow: 1px 1px 2px rgba(70, 70, 70, 0.5);
     }
 
@@ -459,7 +460,7 @@ a {
 
         p {
             line-height: 1.1;
-            color: var(--green);
+            color: var(--lightgray-2);
             width: 10%;
         }
     }
@@ -762,7 +763,7 @@ a {
     }
     
     .smoove-b {
-        border: 2px double var(--lightgreen);
+        border: 2px double var(--lightgray-1);
         border-radius: 0 50px 50px 50px;
         padding: 20px; 
         height: fit-content;

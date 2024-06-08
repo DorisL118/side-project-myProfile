@@ -22,14 +22,14 @@ p {
 /* 在桌機板上 */
 @media (min-width: 1025px) {
   p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
 /* 在平板上 */
 @media (max-width: 1024px) and (min-width: 641px) {
   p {
-    font-size: 1rem ;
+    font-size: 0.9rem ;
   }
 }
 
@@ -46,6 +46,14 @@ br {
   margin-bottom: 1em;
 }
 
+h5 {
+  font-size: 18px;
+  color: #C99AE4;
+}
+
+hr {
+  color: #C99AE4;
+}
 
 .swiper-container-wrapper--timeline .swiper-slide {
   display: flex;
