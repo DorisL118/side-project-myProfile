@@ -1,4 +1,3 @@
-// 確保文檔加載完畢後再執行代碼
 $(document).ready(function () {
     // 初始化 smoove 插件
     $(".smoove").smoove({
@@ -15,13 +14,11 @@ $(document).ready(function () {
     window.addEventListener("scroll", function () {
         var nav = document.getElementById("nav");
         if (window.scrollY > 100) {
-        // 超過 100 像素後添加背景色
-        nav.classList.remove("nav-transparent");
-        nav.classList.add("nav-colored");
+            nav.classList.remove("nav-transparent");
+            nav.classList.add("nav-colored");
         } else {
-        // 否則保持透明背景
-        nav.classList.remove("nav-colored");
-        nav.classList.add("nav-transparent");
+            nav.classList.remove("nav-colored");
+            nav.classList.add("nav-transparent");
         }
     });
 
@@ -39,10 +36,10 @@ $(document).ready(function () {
         let speedSlow = 100 * normalizedPosition;
         let speedFast = 200 * normalizedPosition;
         spansSlow.forEach((span) => {
-        span.style.transform = `translate(${speedSlow}px)`;
+            span.style.transform = `translate(${speedSlow}px)`;
         });
         spansFast.forEach((span) => {
-        span.style.transform = `translate(${speedFast}px)`;
+            span.style.transform = `translate(${speedFast}px)`;
         });
     }
 
@@ -65,51 +62,28 @@ $(document).ready(function () {
         ay = Math.min(Math.max(ay, -maxRotationY), maxRotationY);
 
         card.attr(
-        "style",
-        "transform: rotateY(" +
-            ax +
-            "deg) rotateX(" +
-            ay +
-            "deg);-webkit-transform: rotateY(" +
-            ax +
-            "deg) rotateX(" +
-            ay +
-            "deg);-moz-transform: rotateY(" +
-            ax +
-            "deg) rotateX(" +
-            ay +
-            "deg)"
+            "style",
+            "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)"
         );
     });
 
-    // document.getElementById("downloadButton").addEventListener("click", function() {
-    //     // 創建一個隱藏的 <a> 標籤來下載 PDF
-    //     var link = document.createElement("a");
-    //     link.href = "https://drive.google.com/file/d/1ptkygs7uvODpZ_vBCHdnOTKDn0kQwSxD/view?usp=sharing"; // 將路徑替換為你的 PDF 文件路徑
-    //     link.download = "resume.pdf"; // 設置下載文件的名稱
-    //     document.body.appendChild(link); // 將 <a> 標籤添加到頁面上，這樣才能進行點擊下載
-    //     link.click(); // 模擬點擊
-    //     document.body.removeChild(link); // 點擊完成後移除 <a> 標籤
-    // });
-
+    // 初始化 Swiper
     var swiper = new Swiper(".mySwiper", {
         direction: "vertical",
         slidesPerView: 3,
         spaceBetween: 0,
-        loop: true, // 啟用循環模式
+        loop: true,
         autoplay: {
-        delay: 0, // 設定為 0 使其連續滾動
-        disableOnInteraction: false, // 使用者互動後是否停止自動輪播，設置為 false 表示不停止
+            delay: 0,
+            disableOnInteraction: false,
         },
-        speed: 3000, // 設定自動滾動速度（毫秒），此處設定為 3 秒
+        speed: 3000,
     });
 
-    // 停止自動輪播
     swiper.el.addEventListener("mouseenter", function () {
         swiper.autoplay.stop();
     });
 
-    // 啟動自動輪播
     swiper.el.addEventListener("mouseleave", function () {
         swiper.autoplay.start();
     });
@@ -118,22 +92,20 @@ $(document).ready(function () {
         direction: "vertical",
         slidesPerView: 4,
         spaceBetween: 0,
-        loop: true, // 啟用循環模式
+        loop: true,
         autoplay: {
-        delay: 0, // 設定為 0 使其連續滾動
-        disableOnInteraction: false, // 使用者互動後是否停止自動輪播，設置為 false 表示不停止
+            delay: 0,
+            disableOnInteraction: false,
         },
-        speed: 1000, // 設定自動滾動速度（毫秒），此處設定為 3 秒
+        speed: 1000,
     });
 
-    // 停止自動輪播
-    swiper2.addEventListener("mouseenter", function () {
-        swiper.autoplay.stop();
+    swiper2.el.addEventListener("mouseenter", function () {
+        swiper2.autoplay.stop();
     });
 
-    // 啟動自動輪播
-    swiper2.addEventListener("mouseleave", function () {
-        swiper.autoplay.start();
+    swiper2.el.addEventListener("mouseleave", function () {
+        swiper2.autoplay.start();
     });
 
     let SwiperTop = new Swiper(".swiper--top", {
@@ -141,7 +113,7 @@ $(document).ready(function () {
         centeredSlides: true,
         speed: 6000,
         autoplay: {
-        delay: 1,
+            delay: 1,
         },
         loop: true,
         slidesPerView: "auto",
@@ -154,8 +126,8 @@ $(document).ready(function () {
         centeredSlides: true,
         speed: 6000,
         autoplay: {
-        delay: 1,
-        reverseDirection: true,
+            delay: 1,
+            reverseDirection: true,
         },
         loop: true,
         loopedSlides: 4,
@@ -163,18 +135,23 @@ $(document).ready(function () {
         allowTouchMove: false,
         disableOnInteraction: true,
     });
-});
 
-    let SwiperTop = new Swiper('.swiper--top', {
-        spaceBetween: 0,
-        centeredSlides: true,
-        speed: 6000,
-        autoplay: {
-        delay: 1,
-        },
-        loop: true,
-        slidesPerView:'auto',
-        allowTouchMove: false,
-        disableOnInteraction: true
-    });
+    // 初始化 iframe 自適應
+    function resizeIframe(iframe) {
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+
+    function initIframeResize() {
+        var iframe = document.getElementById('myIframe');
+        iframe.addEventListener('load', function() {
+            resizeIframe(iframe);
+        });
+
+        window.addEventListener('resize', function() {
+            resizeIframe(iframe);
+        });
+    }
+
+    window.addEventListener('load', initIframeResize);
+});
 
